@@ -14,4 +14,14 @@ class ConditionerTest {
         conditioner.setName(expected);
         assertEquals(expected, conditioner.getName());
     }
+
+    @Test
+    public void  shoulddecreaseCurrentTemperature(){
+
+    }
+
+    @Test
+    public void shouldincreaseCurrentTemperature(){
+
+    }
 }
