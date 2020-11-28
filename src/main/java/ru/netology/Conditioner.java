@@ -54,6 +54,7 @@ public class Conditioner {
 //        }
 //    }
 
+
     public boolean isOn() {
         return on;
     }
@@ -61,6 +62,21 @@ public class Conditioner {
     public void setOn(boolean on) {
         this.on = on;
     }
-}
 
+    public void decreaseCurrentTemperature() {
+        currentTemperature -= 1;
+        if (currentTemperature == minTemperature) {
+            return;
+        }
+        this.currentTemperature = getCurrentTemperature();
+    }
+
+    public void increaseCurrentTemperature() {
+        currentTemperature += 1;
+        if (currentTemperature == maxTemperature) {
+            return;
+        }
+        this.currentTemperature = getCurrentTemperature();
+    }
+}
 
