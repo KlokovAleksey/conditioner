@@ -2,7 +2,8 @@ package ru.netology;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class ConditionerTest {
     @Test
@@ -16,12 +17,17 @@ class ConditionerTest {
     }
 
     @Test
-    public void  shoulddecreaseCurrentTemperature(){
-
+    public void shouldDecreaseCurrentTemperature() {
+        Conditioner conditioner = new Conditioner();
+        conditioner.setCurrentTemperature(0);
+        assertEquals(0,conditioner.getCurrentTemperature());
     }
 
-    @Test
-    public void shouldincreaseCurrentTemperature(){
 
+    @Test
+    public void shouldIncreaseCurrentTemperature() {
+        Conditioner conditioner = new Conditioner();
+        conditioner.setCurrentTemperature(0);
+        assertEquals(0,conditioner.getCurrentTemperature());
     }
 }
