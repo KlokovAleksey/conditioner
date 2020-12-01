@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+
 class ConditionerTest {
     @Test
     public void shouldGetAndSet() {
@@ -17,17 +18,42 @@ class ConditionerTest {
     }
 
     @Test
-    public void shouldDecreaseCurrentTemperature() {
+    void shouldDecreaseCurrentTemperature() {
         Conditioner conditioner = new Conditioner();
-        conditioner.setCurrentTemperature(0);
-        assertEquals(0, conditioner.getCurrentTemperature());
+        conditioner.setMaxTemperature(25);
+        conditioner.setMinTemperature(5);
+        conditioner.setCurrentTemperature(15);
+        conditioner.decreaseCurrentTemperature();
+        assertEquals(14, conditioner.getCurrentTemperature());
     }
 
+    @Test
+    void shouldDecreaseMinTemperarure() {
+        Conditioner conditioner = new Conditioner();
+        conditioner.setMaxTemperature(25);
+        conditioner.setMinTemperature(5);
+        conditioner.setCurrentTemperature(5);
+        conditioner.decreaseCurrentTemperature();
+        assertEquals(5, conditioner.getCurrentTemperature());
+    }
 
     @Test
-    public void shouldIncreaseCurrentTemperature() {
+    void shouldIncreaseCurrentTemperature() {
         Conditioner conditioner = new Conditioner();
-        conditioner.setCurrentTemperature(0);
-        assertEquals(0, conditioner.getCurrentTemperature());
+        conditioner.setMaxTemperature(25);
+        conditioner.setMinTemperature(5);
+        conditioner.setCurrentTemperature(15);
+        conditioner.increaseCurrentTemperature();
+        assertEquals(16, conditioner.getCurrentTemperature());
+    }
+
+    @Test
+    void shouldIncreaseMaxTemperature() {
+        Conditioner conditioner = new Conditioner();
+        conditioner.setMaxTemperature(25);
+        conditioner.setMinTemperature(5);
+        conditioner.setCurrentTemperature(25);
+        conditioner.increaseCurrentTemperature();
+        assertEquals(25, conditioner.getCurrentTemperature());
     }
 }
